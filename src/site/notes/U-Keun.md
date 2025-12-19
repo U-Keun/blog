@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//paperclip","dg-publish":true,"dg-home":true,"permalink":"/u-keun/","tags":["gardenEntry"],"dgPassFrontmatter":true}
+{"sticker":"lucide//paperclip","dg-publish":true,"dg-home":true,"permalink":"/u-keun/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":""}
 ---
 
 

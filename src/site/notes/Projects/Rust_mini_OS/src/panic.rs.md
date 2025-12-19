@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/projects/rust-mini-os/src/panic-rs/","dgPassFrontmatter":true}
+{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/projects/rust-mini-os/src/panic-rs/","dgPassFrontmatter":true,"noteIcon":""}
 ---
 
 커널 레벨에서 패닉을 처리하는 모듈을 살펴보자.

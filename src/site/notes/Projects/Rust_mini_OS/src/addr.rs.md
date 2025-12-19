@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/projects/rust-mini-os/src/addr-rs/","dgPassFrontmatter":true}
+{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/projects/rust-mini-os/src/addr-rs/","dgPassFrontmatter":true,"noteIcon":""}
 ---
 
 주소 타입을 정리하는 모듈로 물리 주소 `PAddr` 타입과 가상 주소 `VAddr` 타입을 가진다.

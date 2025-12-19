@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/projects/rust-mini-os/src/mem-rs/","dgPassFrontmatter":true}
+{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/projects/rust-mini-os/src/mem-rs/","dgPassFrontmatter":true,"noteIcon":""}
 ---
 
 커널 전체에서 공통으로 사용하는, 바이트 슬라이스(`&mut [u8]`, `&[u8]`) 단위의 저수준 메모리 조작 유틸 모듈이다. 상위 레벨에서는 가능한 한 `Page`, `Frame`, `Buf` 같은 의미 있는 타입을 쓰고, 그 타입들이 내부에서 실제 바이트를 만져야 할 때 `mem` 모듈의 함수를 호출하도록 만들었다. 
