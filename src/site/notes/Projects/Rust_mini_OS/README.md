@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//clipboard-check","dg-publish":true,"permalink":"/projects/rust-mini-os/readme/","dgPassFrontmatter":true}
+{"sticker":"lucide//clipboard-check","dg-publish":true,"tags":["Docs","OS","Rust"],"permalink":"/projects/rust-mini-os/readme/","dgPassFrontmatter":true}
 ---
 
 **프로젝트명 :** Rust Mini OS on RISC-V
