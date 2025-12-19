@@ -3,6 +3,8 @@
 ---
 
 
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Hi,%20I'm%20U-Keun&fontSize=80)
+
 저는 문제를 정의하고 가설을 검증하며 해결책을 찾아가는 과정을 좋아합니다. 알고리즘/자료구조로 기본기를 다지면서, 필요하면 도구를 직접 만들어 사용성과 완성도를 계속 끌어올리는 “메이커형” 개발자를 지향합니다.
 ### Stack ✏️
 - Main : <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white"/> <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white"/> <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=Rust&logoColor=white"/> <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=openjdk&logoColor=white"/>
