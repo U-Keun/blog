@@ -2,9 +2,7 @@
 {"sticker":"lucide//paperclip","dg-publish":true,"dg-home":true,"permalink":"/u-keun/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":""}
 ---
 
-
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Hi,%20I'm%20U-Keun&fontSize=80)
-
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&pause=1200&center=true&vCenter=true&width=1000&lines=Hi%2C+I'm+U-Keun!;)](https://github.com/DenverCoder1/readme-typing-svg)
 ### I'm..
 - 막연한 문제를 그대로 두지 않고, 원인을 쪼개고 실험을 반복해 답을 찾는 편입니다. 
 - 배우는 속도 자체를 즐기며, 그중에서도 알고리즘은 사고방식을 단단하게 만드는 훈련이라 꾸준히 파고듭니다.
