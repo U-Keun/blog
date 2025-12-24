@@ -6,13 +6,13 @@
 
 ```rust
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-pub struct PAddr(pub usize);
+pub struct PAddr(pub(crate) usize);
 
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Debug)]
-pub struct VAddr(pub usize);
+pub struct VAddr(pub(crate) usize);
 
 ```
-`PAddr`/`VAddr`는 각각 `usize` 하나를 들고 있는 구조체이이다. 값 타입으로 가볍게 쓰면서, 비교 및 정렬도 가능하도록 트레이트(`Copy`, `Clone`, `Eq`, `PartialEq`, ...)를 추가해 두었다.
+`PAddr`/`VAddr`는 각각 `usize` 하나를 들고 있는 구조체이이다. 값 타입으로 가볍게 쓰면서, 비교 및 정렬도 가능하도록 트레이트(`Copy`, `Clone`, `Eq`, `PartialEq`, ...)를 추가해 두었다. 내부 필드가 `pub(crate)`이라서 같은 크레이트 내부에서는 접근 가능하지만, 크레이트 외부에서는 직접 `addr.0` 등으로 볼 수 없다.
 
 ```rust
 pub trait Addr: Copy + Eq + Ord {
