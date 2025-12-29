@@ -1,4 +1,6 @@
-const sortTree = (unsorted) => {
+const TOP_LEVEL_FOLDER_ORDER = ["Projects", "Areas", "Resources", "Archive"];
+
+const sortTree = (unsorted, depth = 0) => {
   //Sort by folder before file, then by name
   const orderedTree = Object.keys(unsorted)
     .sort((a, b) => {
@@ -15,6 +17,22 @@ const sortTree = (unsorted) => {
 
       const a_is_note = a.indexOf(".md") > -1;
       const b_is_note = b.indexOf(".md") > -1;
+
+      if (depth === 0 && !a_is_note && !b_is_note) {
+        const a_index = TOP_LEVEL_FOLDER_ORDER.indexOf(a);
+        const b_index = TOP_LEVEL_FOLDER_ORDER.indexOf(b);
+        if (a_index !== -1 || b_index !== -1) {
+          if (a_index === -1) {
+            return 1;
+          }
+          if (b_index === -1) {
+            return -1;
+          }
+          if (a_index !== b_index) {
+            return a_index - b_index;
+          }
+        }
+      }
 
       if (a_is_note && !b_is_note) {
         return 1;
@@ -49,7 +67,7 @@ const sortTree = (unsorted) => {
 
   for (const key of Object.keys(orderedTree)) {
     if (orderedTree[key].isFolder) {
-      orderedTree[key] = sortTree(orderedTree[key]);
+      orderedTree[key] = sortTree(orderedTree[key], depth + 1);
     }
   }
 
