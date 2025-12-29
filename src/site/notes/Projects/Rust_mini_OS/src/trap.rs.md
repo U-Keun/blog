@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//code-2","tags":["Code","OS","Rust"],"dg-publish":true,"permalink":"/projects/rust-mini-os/src/trap-rs/","dgPassFrontmatter":true,"noteIcon":""}
+{"sticker":"lucide//code-2","tags":["Code","OS","Rust"],"dg-publish":true,"permalink":"/projects/rust-mini-os/src/trap-rs/","dgPassFrontmatter":true}
 ---
 
 S-mode에서 트랩 벡터 엔트리(`trap_entry`)와 레지스터 저장을 위한 `TrapFrame`을 정의하고, 공통 Rust 핸들러인 `handle_trap`으로 넘기는 트랩 엔트리 코드이다.

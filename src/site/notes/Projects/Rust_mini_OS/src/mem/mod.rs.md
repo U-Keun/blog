@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"dg-publish":true,"sticker":"lucide//code-2","permalink":"/projects/rust-mini-os/src/mem/mod-rs/","dgPassFrontmatter":true,"noteIcon":""}
+{"tags":["Code","OS","Rust"],"dg-publish":true,"sticker":"lucide//code-2","permalink":"/projects/rust-mini-os/src/mem/mod-rs/","dgPassFrontmatter":true}
 ---
 
 커널의 메모리 서브시스템을 구성하는 공통 정의와 유틸 함수를 모아둔 곳이다. 

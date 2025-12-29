@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//code-2","tags":["Code","OS","Rust"],"dg-publish":true,"permalink":"/projects/rust-mini-os/src/csr-rs/","dgPassFrontmatter":true,"noteIcon":""}
+{"sticker":"lucide//code-2","tags":["Code","OS","Rust"],"dg-publish":true,"permalink":"/projects/rust-mini-os/src/csr-rs/","dgPassFrontmatter":true}
 ---
 
 RISC-V의 주요 Supervisor CSR(Control and Status Register)을 읽고 쓰는 커널 전용 유틸리티 모듈이다. 

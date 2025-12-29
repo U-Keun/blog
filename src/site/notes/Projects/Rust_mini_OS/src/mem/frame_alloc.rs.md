@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"dg-publish":true,"sticker":"lucide//code-2","permalink":"/projects/rust-mini-os/src/mem/frame-alloc-rs/","dgPassFrontmatter":true,"noteIcon":""}
+{"tags":["Code","OS","Rust"],"dg-publish":true,"sticker":"lucide//code-2","permalink":"/projects/rust-mini-os/src/mem/frame-alloc-rs/","dgPassFrontmatter":true}
 ---
 
 커널이 쓰고 남은 "free RAM" 구간 `[__free_ram .. __free_ram_end)`에서 페이지를 연속으로 할당하는 모듈이다.
