@@ -12,7 +12,7 @@ Self-managed 환경에서 MongoDB는 데이터를 디스크에 파일 형태로 
 
 #### 예약된 database 이름
 - `admin` : 인증/권한 DB로, 일부 관리 작업은 `admin` 접근 권한이 전제된다.
-- `local` : 각 `mongod` 인스턴스[^1]에 존재하고, 인스턴스 로컬 정보를 저장한다.[^1]
+- `local` : 각 `mongod` 인스턴스[^1]에 존재하고, 인스턴스 로컬 정보를 저장한다.[^2]
 - `config` : 샤딩(sharding) 환경에서 클러스터 메타데이터/설정 정보를 저장하는 내부 DB
 
 #### Namespace
