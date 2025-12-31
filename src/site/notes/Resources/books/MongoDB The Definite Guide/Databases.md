@@ -12,13 +12,14 @@ Self-managed 환경에서 MongoDB는 데이터를 디스크에 파일 형태로 
 
 #### 예약된 database 이름
 - `admin` : 인증/권한 DB로, 일부 관리 작업은 `admin` 접근 권한이 전제된다.
-- `local` : 각 `mongod` 인스턴스에 존재하고, 인스턴스 로컬 정보를 저장한다.[^1]
+- `local` : 각 `mongod` 인스턴스[^1]에 존재하고, 인스턴스 로컬 정보를 저장한다.[^1]
 - `config` : 샤딩(sharding) 환경에서 클러스터 메타데이터/설정 정보를 저장하는 내부 DB
 
 #### Namespace
-database 이름과 collection 이름을 합친 것을 *namespace*라고 부른다. namespace는 255-byte[^2] 길이[^3]로 제한되는데, 100-byte 길이 미만을 권장한다.
+database 이름과 collection 이름을 합친 것을 *namespace*라고 부른다. namespace는 255-byte[^3] 길이[^4]로 제한되는데, 100-byte 길이 미만을 권장한다.
 >[!EXAMPLE] `cms` database의 `blog.posts` collection의 namespace : cms.blog.posts
 
-[^1]: 복제되지 않는다.
-[^2]: 샤딩된 collection의 경우에는 235-byte 길이 제한
-[^3]: `<database>.<collection>` 형식의 길이 전체를 의미한다.
+[^1]: MongoDB 서버 프로세스(데몬) 이름
+[^2]: 복제되지 않는다.
+[^3]: 샤딩된 collection의 경우에는 235-byte 길이 제한
+[^4]: `<database>.<collection>` 형식의 길이 전체를 의미한다.
