@@ -19,11 +19,11 @@ mongod --dbpath ~/mongodb-data
 위의 명령을 수행하면, 많은 내용이 뜨지만, 아래와 같이 연결을 기다리고 있다는 메시지를 확인할 수 있다.
 ![start_mongodb.png| center](/img/user/Archive/attachments/start_mongodb.png)
 
-다른 터미널을 열어서 `mongosh`에 접속할 수 있다. 현재는 로컬에서 실행한 서버에 접속하는 것이다.
+다른 터미널을 열어서 `mongosh`에 접속할 수 있다. 아래의 명령은 로컬에서 실행한 서버에 접속하는 것이다.
 ```bash
 mongosh "mongodb://127.0.0.1:27017"
 ```
 
-아래와 같은 화면을 볼 수 있고, 셸에서 `show dbs` 명령으로 현재 존재하는 database를 확인할 수 있다.
+그러면 아래와 같은 화면을 볼 수 있고, 셸에서 `show dbs` 명령으로 현재 존재하는 database를 확인할 수 있다.
 ![mongosh.png| center | 500](/img/user/Archive/attachments/mongosh.png)
->[!NOTE] `quit`이나 `exit` 명령으로 셸에서 벗어날 수 있다.
+>[!NOTE] 셸에서 `quit`이나 `exit` 명령으로 셸에서 벗어날 수 있다.
