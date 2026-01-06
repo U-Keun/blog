@@ -14127,9 +14127,9 @@ body.mod-rtl .bases-table-header-resizer {
 .nav-file-title-content,
 .nav-folder-title-content {
   display: inline-block;
-  overflow-wrap: anywhere;
   overflow: hidden;
-  white-space: var(--nav-item-white-space);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .nav-file-title-content:not([contenteditable="true"]),
 .nav-folder-title-content:not([contenteditable="true"]) {
