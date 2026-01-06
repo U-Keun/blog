@@ -673,6 +673,7 @@ body.has-navbar .content {
     font-size: var(--dg-notelink-size);
     border-left: var(--dg-notelink-border-width) solid transparent;
     margin-left: -1px;
+	min-width: 0;
 
     a {
         &:hover {
@@ -693,6 +694,9 @@ body.has-navbar .content {
     cursor: pointer;
     margin: var(--dg-folder-margin);
     font-size: var(--dg-notelink-size);
+	display: flex;
+    align-items: center;
+    min-width: 0;
 
     i, svg {
         width: var(--dg-folder-icon-size);
@@ -714,6 +718,21 @@ body.has-navbar .content {
 
 .filename {
     margin-left: 0;
+	display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.foldername {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 // Root level notes (direct children of .folder, not inside .filelist)
