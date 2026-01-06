@@ -14227,7 +14227,11 @@ body:not(.is-grabbing) .nav-folder-title.is-being-dragged .nav-file-tag,
 }
 .file-tree-item-title {
   flex-grow: 1;
-  word-break: break-word;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
 }
 .file-tree-item-icon {
   --icon-size: var(--icon-s);
@@ -14242,6 +14246,15 @@ body:not(.is-grabbing) .nav-folder-title.is-being-dragged .nav-file-tag,
   align-items: center;
   position: relative;
   width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.file-tree .tree-item-inner-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .file-tree .tree-item-flair {
   line-height: 1;
