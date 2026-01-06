@@ -14126,10 +14126,14 @@ body.mod-rtl .bases-table-header-resizer {
 }
 .nav-file-title-content,
 .nav-folder-title-content {
-  display: inline-block;
+  display: block;
+  flex: 1 1 auto;
   overflow: hidden;
   text-overflow: ellipsis;
+  overflow-wrap: normal;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
 }
 .nav-file-title-content:not([contenteditable="true"]),
 .nav-folder-title-content:not([contenteditable="true"]) {
@@ -14158,6 +14162,7 @@ body.mod-rtl .bases-table-header-resizer {
   display: flex;
   border-radius: var(--radius-s);
   cursor: var(--cursor);
+  min-width: 0;
   color: var(--nav-item-color);
   font-size: var(--nav-item-size);
   font-weight: var(--nav-item-weight);
