@@ -58,7 +58,8 @@ body {
         gap: 0.4em;
     }
 
-    .graph-fs {
+    .graph-fs,
+    #full-graph {
         left: calc(50% + var(--dg-graph-fullscreen-offset)) !important;
     }
 }
