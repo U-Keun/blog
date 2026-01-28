@@ -80,6 +80,7 @@ function getPermalinkMeta(note, key) {
   let name = parts[parts.length - 1];
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
   let sticker = null;
+  let folderSticker = false;
   let hide = false;
   let pinned = false;
   let folders = null;
@@ -99,6 +100,9 @@ function getPermalinkMeta(note, key) {
     if (note.data.sticker) {
       sticker = note.data.sticker;
     }
+    if (note.data.folderSticker) {
+      folderSticker = note.data.folderSticker;
+    }
     // Reason for adding the hide flag instead of removing completely from file tree is to
     // allow users to use the filetree data elsewhere without the fear of losing any data.
     if (note.data.hide) {
@@ -107,12 +111,29 @@ function getPermalinkMeta(note, key) {
     if (note.data.pinned) {
       pinned = note.data.pinned;
     }
-    folders = getFolders(note);
+    if (note.data["dg-path"]) {
+      folders = note.data["dg-path"].split("/");
+    } else {
+      folders = note.filePathStem
+        .split("notes/")[1]
+        .split("/");
+    }
+    folders[folders.length - 1]+= ".md";
+    if (folders.length > 1) {
+      const noteFileName = folders[folders.length - 1].replace(/\.md$/, "");
+      const folderName = folders[folders.length - 2];
+      if (noteFileName === folderName) {
+        folderMeta = true;
+        if (note.data.hide === undefined) {
+          hide = true;
+        }
+      }
+    }
   } catch {
     //ignore
   }
 
-  return [{ permalink, name, noteIcon, sticker, hide, pinned }, folders];
+  return [{ permalink, name, noteIcon, sticker, folderSticker, hide, pinned }, folders];
 }
 
 function assignNested(obj, keyPath, value) {
@@ -136,23 +157,6 @@ function assignFolderMeta(obj, keyPath, value) {
     current = current[key];
   }
   Object.assign(current, value, { isFolder: true });
-}
-
-function getFolders(note) {
-  try {
-    let folders = null;
-    if (note.data["dg-path"]) {
-      folders = note.data["dg-path"].split("/");
-    } else {
-      folders = note.filePathStem
-        .split("notes/")[1]
-        .split("/");
-    }
-    folders[folders.length - 1] += ".md";
-    return folders;
-  } catch {
-    return null;
-  }
 }
 
 function getFileTree(data) {
@@ -189,8 +193,11 @@ function getFileTree(data) {
       meta.hide = true;
     }
     assignNested(tree, folders, { isNote: true, ...meta });
-    if (folderMetaPath && meta.sticker) {
-      assignFolderMeta(tree, folderMetaPath, { sticker: meta.sticker });
+    if (meta.folderSticker && meta.sticker) {
+      const folderPath = folders.slice(0, -1);
+      if (folderPath.length > 0) {
+        assignFolderMeta(tree, folderPath, { sticker: meta.sticker });
+      }
     }
   });
   const fileTree = sortTree(tree);
