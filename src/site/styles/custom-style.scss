@@ -34,6 +34,12 @@ body {
     .dg-sticker--lucide .svg-icon {
         width: 1.1em;
         height: 1.1em;
+    }
+
+    .foldername[data-top-folder="Projects"] .dg-sticker--lucide .svg-icon,
+    .foldername[data-top-folder="Areas"] .dg-sticker--lucide .svg-icon,
+    .foldername[data-top-folder="Resources"] .dg-sticker--lucide .svg-icon,
+    .foldername[data-top-folder="Archive"] .dg-sticker--lucide .svg-icon {
         color: #fff;
     }
 
