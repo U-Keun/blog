@@ -22,9 +22,17 @@ module.exports = {
       allSettings.forEach((setting) => {
         let noteSetting = data[setting];
         let globalSetting = process.env[setting];
+        let settingValue = noteSetting;
 
-        let settingValue =
-          noteSetting || (globalSetting === "true" && noteSetting !== false);
+        if (settingValue === undefined) {
+          if (globalSetting === "true") {
+            settingValue = true;
+          } else if (globalSetting === "false") {
+            settingValue = false;
+          } else if (setting === "dgShowLocalGraph") {
+            settingValue = true;
+          }
+        }
         noteSettings[setting] = settingValue;
       });
       return noteSettings;
