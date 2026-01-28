@@ -12,4 +12,32 @@ body {
     //  h1 {
     //   color: black;
     //  }
+
+    .dg-sticker {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.4em;
+        flex: 0 0 auto;
+    }
+
+    .dg-sticker--lucide .svg-icon {
+        width: 1.1em;
+        height: 1.1em;
+    }
+
+    .dg-sticker--image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+
+    .notelink .filename {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+    }
 }
