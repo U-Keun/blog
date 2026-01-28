@@ -80,6 +80,7 @@ function getPermalinkMeta(note, key) {
   let name = parts[parts.length - 1];
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
   let sticker = null;
+  let folderMeta = false;
   let hide = false;
   let pinned = false;
   let folders = null;
@@ -115,11 +116,21 @@ function getPermalinkMeta(note, key) {
         .split("/");
     }
     folders[folders.length - 1]+= ".md";
+    if (folders.length > 1) {
+      const noteFileName = folders[folders.length - 1].replace(/\.md$/, "");
+      const folderName = folders[folders.length - 2];
+      if (noteFileName === folderName) {
+        folderMeta = true;
+        if (note.data.hide === undefined) {
+          hide = true;
+        }
+      }
+    }
   } catch {
     //ignore
   }
 
-  return [{ permalink, name, noteIcon, sticker, hide, pinned }, folders];
+  return [{ permalink, name, noteIcon, sticker, folderMeta, hide, pinned }, folders];
 }
 
 function assignNested(obj, keyPath, value) {
@@ -134,11 +145,28 @@ function assignNested(obj, keyPath, value) {
   obj[keyPath[lastKeyIndex]] = value;
 }
 
+function assignFolderMeta(obj, keyPath, value) {
+  let current = obj;
+  for (const key of keyPath) {
+    if (!(key in current)) {
+      current[key] = { isFolder: true };
+    }
+    current = current[key];
+  }
+  Object.assign(current, value, { isFolder: true });
+}
+
 function getFileTree(data) {
   const tree = {};
   (data.collections.note || []).forEach((note) => {
     const [meta, folders] = getPermalinkMeta(note);
     assignNested(tree, folders, { isNote: true, ...meta });
+    if (meta.folderMeta && meta.sticker) {
+      const folderPath = folders.slice(0, -1);
+      if (folderPath.length > 0) {
+        assignFolderMeta(tree, folderPath, { sticker: meta.sticker });
+      }
+    }
   });
   const fileTree = sortTree(tree);
   return fileTree;
