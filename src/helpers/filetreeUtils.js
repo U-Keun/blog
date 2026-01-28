@@ -74,6 +74,23 @@ const sortTree = (unsorted, depth = 0) => {
   return orderedTree;
 };
 
+function getFolders(note) {
+  try {
+    let folders = null;
+    if (note.data["dg-path"]) {
+      folders = note.data["dg-path"].split("/");
+    } else {
+      folders = note.filePathStem
+        .split("notes/")[1]
+        .split("/");
+    }
+    folders[folders.length - 1] += ".md";
+    return folders;
+  } catch {
+    return null;
+  }
+}
+
 function getPermalinkMeta(note, key) {
   let permalink = "/";
   let parts = note.filePathStem.split("/");
@@ -111,24 +128,7 @@ function getPermalinkMeta(note, key) {
     if (note.data.pinned) {
       pinned = note.data.pinned;
     }
-    if (note.data["dg-path"]) {
-      folders = note.data["dg-path"].split("/");
-    } else {
-      folders = note.filePathStem
-        .split("notes/")[1]
-        .split("/");
-    }
-    folders[folders.length - 1]+= ".md";
-    if (folders.length > 1) {
-      const noteFileName = folders[folders.length - 1].replace(/\.md$/, "");
-      const folderName = folders[folders.length - 2];
-      if (noteFileName === folderName) {
-        folderMeta = true;
-        if (note.data.hide === undefined) {
-          hide = true;
-        }
-      }
-    }
+    folders = getFolders(note);
   } catch {
     //ignore
   }
@@ -161,14 +161,40 @@ function assignFolderMeta(obj, keyPath, value) {
 
 function getFileTree(data) {
   const tree = {};
-  (data.collections.note || []).forEach((note) => {
+  const notes = data.collections.note || [];
+  const folderPaths = new Set();
+  notes.forEach((note) => {
+    const folders = getFolders(note);
+    if (!folders) {
+      return;
+    }
+    const folderSegments = folders.slice(0, -1);
+    const currentPath = [];
+    folderSegments.forEach((segment) => {
+      currentPath.push(segment);
+      folderPaths.add(currentPath.join("/"));
+    });
+  });
+  notes.forEach((note) => {
     const [meta, folders] = getPermalinkMeta(note);
+    if (!folders) {
+      return;
+    }
+    const noteFileName = folders[folders.length - 1].replace(/\.md$/, "");
+    const parentFolderName =
+      folders.length > 1 ? folders[folders.length - 2] : null;
+    let folderMetaPath = null;
+    if (parentFolderName && noteFileName === parentFolderName) {
+      folderMetaPath = folders.slice(0, -1);
+    } else if (folders.length === 1 && folderPaths.has(noteFileName)) {
+      folderMetaPath = [noteFileName];
+    }
+    if (folderMetaPath && note.data.hide === undefined) {
+      meta.hide = true;
+    }
     assignNested(tree, folders, { isNote: true, ...meta });
-    if (meta.folderSticker && meta.sticker) {
-      const folderPath = folders.slice(0, -1);
-      if (folderPath.length > 0) {
-        assignFolderMeta(tree, folderPath, { sticker: meta.sticker });
-      }
+    if (folderMetaPath && meta.sticker) {
+      assignFolderMeta(tree, folderMetaPath, { sticker: meta.sticker });
     }
   });
   const fileTree = sortTree(tree);
