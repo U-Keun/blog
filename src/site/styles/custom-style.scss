@@ -21,6 +21,8 @@ body {
         height: 1.2em;
         margin-right: 0.4em;
         flex: 0 0 auto;
+        background-color: var(--dg-sticker-bg, transparent);
+        border-radius: 4px;
     }
 
     .dg-sticker--lucide .svg-icon {
