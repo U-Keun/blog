@@ -119,6 +119,16 @@ function getPermalinkMeta(note, key) {
         .split("/");
     }
     folders[folders.length - 1]+= ".md";
+    if (folders.length > 1) {
+      const noteFileName = folders[folders.length - 1].replace(/\.md$/, "");
+      const folderName = folders[folders.length - 2];
+      if (noteFileName === folderName) {
+        folderMeta = true;
+        if (note.data.hide === undefined) {
+          hide = true;
+        }
+      }
+    }
   } catch {
     //ignore
   }
