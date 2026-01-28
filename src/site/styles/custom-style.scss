@@ -41,6 +41,7 @@ body {
     .foldername[data-top-folder="Resources"] .dg-sticker--lucide .svg-icon,
     .foldername[data-top-folder="Archive"] .dg-sticker--lucide .svg-icon {
         color: #fff;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
     }
 
     .dg-sticker--image img {
