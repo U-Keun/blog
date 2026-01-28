@@ -97,6 +97,7 @@ function getPermalinkMeta(note, key) {
   let name = parts[parts.length - 1];
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
   let sticker = null;
+  let folderSticker = false;
   let hide = false;
   let pinned = false;
   let folders = null;
@@ -116,6 +117,9 @@ function getPermalinkMeta(note, key) {
     if (note.data.sticker) {
       sticker = note.data.sticker;
     }
+    if (note.data.folderSticker) {
+      folderSticker = note.data.folderSticker;
+    }
     // Reason for adding the hide flag instead of removing completely from file tree is to
     // allow users to use the filetree data elsewhere without the fear of losing any data.
     if (note.data.hide) {
@@ -129,7 +133,7 @@ function getPermalinkMeta(note, key) {
     //ignore
   }
 
-  return [{ permalink, name, noteIcon, sticker, hide, pinned }, folders];
+  return [{ permalink, name, noteIcon, sticker, folderSticker, hide, pinned }, folders];
 }
 
 function assignNested(obj, keyPath, value) {
