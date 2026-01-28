@@ -5,18 +5,11 @@
 ![Tickly_v0.2-3_overview.png|center|200](/img/user/Archive/attachments/Tickly_v0.2-3_overview.png)[[Projects/Tickly/Tickly v0.1\|기존 버전]]에 이어서 기능을 추가하고 있다. v0.2-0.3에서는 반복 규칙 기반 체크리스트 유지 기능과 스트릭(잔디) 시각화 기능이 추가되었다.
 ### v0.2 : repeat rule
 기존에 구현해 두었던 일일 자동 초기화를 제거하고, 반복 규칙으로 체크리스트를 재활성화할 수 있도록 바꾸었다. 핵심 기능은 다음과 같다 : 
-- 반복 규칙 : 매일 / 매주(요일 선택) / 매월(특정 일)
-<div style="display:flex; gap:12px;">
-    <div style="flex:1; display:flex; justify-content:center; align-items:center; height:260px;">
-        <img src="Tickly_repeat_item.png" style="max-width:100%; max-height:100%; height:auto;" />
-    </div>
-  <div style="flex:1; display:flex; justify-content:center; align-items:center; height:260px;">
-    <img src="Tickly_repeat_weekly.png" style="max-width:100%; max-height:100%; height:auto;" />
-  </div>
-  <div style="flex:1; display:flex; justify-content:center; align-items:center; height:260px;">
-    <img src="Tickly_repeat_monthly.png" style="max-width:100%; max-height:100%; height:auto;" />
-  </div>
-</div>
+
+| 매일                          | 매주(요일 선택)                     | 매월(특정 일)                       |
+| --------------------------- | ----------------------------- | ------------------------------ |
+| ![Tickly_repeat_item.png](/img/user/Archive/attachments/Tickly_repeat_item.png) | ![Tickly_repeat_weekly.png](/img/user/Archive/attachments/Tickly_repeat_weekly.png) | ![Tickly_repeat_monthly.png](/img/user/Archive/attachments/Tickly_repeat_monthly.png) |
+
 - 항목 생성/수정 흐름에서 반복 옵션 설정 가능
 - 다음 실행일 자동 계산 및 앱 시작시 해당 항목 재활성화 프로세스 추가
 ##### Model 변경
