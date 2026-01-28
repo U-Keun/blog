@@ -60,6 +60,7 @@ body {
 
     .graph-fs,
     #full-graph {
-        left: calc(50% + var(--dg-graph-fullscreen-offset)) !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) translateX(var(--dg-graph-fullscreen-offset)) !important;
     }
 }
