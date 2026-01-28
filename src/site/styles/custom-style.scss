@@ -11,6 +11,7 @@ body {
     --mk-color-orange: #fb923c;
     --mk-color-red: #f87171;
     --mk-color-pink: #f472b6;
+    --dg-graph-fullscreen-offset: 120px;
     //  background-color: white;
     //  .content {
     //   font-size: 14px;
@@ -55,5 +56,9 @@ body {
         display: inline-flex;
         align-items: center;
         gap: 0.4em;
+    }
+
+    .graph-fs {
+        left: calc(50% + var(--dg-graph-fullscreen-offset)) !important;
     }
 }
