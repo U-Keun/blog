@@ -48,6 +48,12 @@
 - 한화비전 VEDA 임베디드 소프트웨어 교육 수료 (2024.07 ~ 2024.12)  
   - 최우수 프로젝트상: 제스처 기반 사용자 인터페이스 시스템
 ---
+
+## Teaching / Mentoring 🎓
+- **VEDA 2기 — C/C++ 보조 강사** (2025.04 ~ 2025.05)  
+  - C/C++ 보충 강의 진행
+---
+
 ## Stack ✏️
 - Main : <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white"/> <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white"/> <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=Rust&logoColor=white"/> <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=openjdk&logoColor=white"/>
 - Framework/App : <img src="https://img.shields.io/badge/Tauri-24C8D8?style=flat&logo=Tauri&logoColor=white"/> <img src="https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=Svelte&logoColor=white"/> <img src="https://img.shields.io/badge/tailwind%20css-%2338B2AC.svg?&style=flat-square&logo=tailwind%20css&logoColor=white"/> <img src="https://img.shields.io/badge/Qt-41CD52?style=flat-square&logo=Qt&logoColor=white"/> <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white"/>
