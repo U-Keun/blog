@@ -63,36 +63,51 @@
 - `todos, categories | updated_at`
 - `todos, categories | sync_status` : `pending` / `synced` / `deleted`
 - 새 테이블 추가 : `auth_session`, `sync_metadata`
-## Tickly v0.5 : 태그
+## [[Projects/Tickly/Tickly v0.5-0.6 tags & graph view\|Tickly v0.5]] : 태그
 ### 목표
 항목(todo)에 태그를 붙여 분류하고, 그래프 뷰(v0.6)의 기반 데이터로 활용
 ### MVP 범위
 - 태그 대상: 할 일 항목(todo)
 - 태그 형식: 텍스트 전용(색상 없음)
 - 태그 관리: 생성/삭제
+- 자동완성: 입력 기반 기존 태그 제안(최대 5개)
 - 항목당 복수 태그 가능
-- 태그 기반 필터링: 특정 태그가 붙은 항목만 카테고리 횡단 조회
-- 클라우드 동기화 지원
+- 태그 기반 필터링: 단일 태그 기준 카테고리 횡단 조회
+- 클라우드 동기화 + Realtime 구독 지원(`tags`, `todo_tags`)
 ### Model 변경
 - `tags | id`
 - `tags | name` : 유저 범위 UNIQUE
 - `tags` 동기화 메타 데이터 : `sync_id`, `created_at`, `updated_at`, `sync_status`
 - `todo_tags | todo_id` → todos
 - `todo_tags | tag_id` → tags
-- `todo_tags | PK` 또는 `UNIQUE(todo_id, tag_id)`
+- `todo_tags | PK` : (`todo_id`, `tag_id`)
 - `todo_tags` 동기화 메타 데이터 : `sync_id`, `created_at`, `sync_status`
-## Tickly v0.6 : 그래프 뷰
+## [[Projects/Tickly/Tickly v0.5-0.6 tags & graph view\|Tickly v0.6]] : 그래프 뷰
 ### 목표
-태그-항목 관계를 그래프로 시각화해 “전체 할 일의 구조”를 파악
+category-tag-item 관계를 그래프로 시각화해 “전체 할 일의 구조”를 파악
 ### MVP 범위
-- 노드: 태그 노드 + 항목 노드
-- 태그 노드 크기: 해당 태그의 항목 수에 비례
-- 엣지: 태그-항목 관계
+- 노드: `category` + `tag` + `item`
+- 노드 크기: `category(12px)` / `tag(10px)` / `item(8px)` 고정
+- 엣지: `item-category`, `item-tag`
 - 인터랙션
-    - 태그 노드 탭: (MVP) 아무 동작 없음
-    - 항목 노드 탭: 해당 항목의 카테고리 화면으로 이동
-    - 줌/패닝 지원(간단)
-## Tickly v0.7 : 공유 리스트 (팀 체크리스트)
+    - 카테고리 노드 탭: 해당 카테고리 선택 후 메인 화면 이동
+    - 항목 노드 탭: 완료/미완료 토글
+    - 태그 노드 press: 연결 관계 하이라이트
+    - 드래그/줌/패닝 지원(휠 + 핀치)
+## [[Projects/Tickly/Tickly v0.7 item reminder\|Tickly v0.7]] : 항목 알림
+### 목표
+특정 항목에 알림을 설정해서 잊지 않고 실행
+### MVP 범위
+- 항목별 알림 시간 설정(`HH:MM`)
+- 완료/삭제/재활성화 상태 변화에 맞춘 자동 취소/재등록
+- 앱 시작 시 미완료 알림 항목 재스케줄
+- 항목별 연결 앱 지정 및 상세 화면에서 바로 열기
+- 로컬 알림(iOS Notification)
+### 데이터 모델 변경
+- `todos.reminder_at` (`TEXT` / nullable)
+- `todos.linked_app` (`TEXT` / nullable)
+- 클라우드 동기화 payload 포함
+## Tickly v0.8 : 공유 리스트 (팀 체크리스트)
 ### 목표
 카테고리 단위로 한 리스트를 **여러 사람이 함께 체크**
 ### MVP 범위
@@ -104,7 +119,7 @@
 - `categories.share_id`
 - `categories.owner_id`
 - `category_members` (카테고리-유저 매핑)
-## Tickly v0.8 : iOS 위젯
+## Tickly v0.9 : iOS 위젯
 ### 목표
 앱을 열지 않고도 빠르게 체크 → 사용 빈도 상승
 ### MVP 범위
@@ -116,13 +131,3 @@
 - App Group 컨테이너 또는 `UserDefaults(suiteName:)`로 최소 상태를 공유
 - “위젯 표시용 요약 스냅샷”을 따로 유지하는 설계
     - 예: 카테고리별 상위 N개, 오늘 due 항목, done 상태 정도
-## Tickly v0.9 : 항목 알림
-### 목표
-특정 항목에 알림을 설정해서 잊지 않고 실행
-### MVP 범위
-- 항목별 알림 시간 설정(날짜+시간)
-- 반복 항목 연동: 반복 규칙에 맞춰 알림 자동 생성/갱신
-- 로컬 알림(iOS Notification)
-### 데이터 모델 변경
-- `todos.reminder_at` (TIMESTAMPTZ / nullable)
-- 클라우드 동기화 지원

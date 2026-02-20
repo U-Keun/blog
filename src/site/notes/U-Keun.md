@@ -5,7 +5,7 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&pause=1200&center=true&vCenter=true&width=1000&lines=Hi%2C+I'm+U-Keun!;)](https://github.com/DenverCoder1/readme-typing-svg)
 
 ## One-liner
-**Build for me. Scale for everyone.**
+**Build for someone. Scale for everyone.**
 
 ## Strengths 💁
 - **Problem → Product**: 개인의 불편을 기능으로 만들고, 사용자 관점에서 제품으로 다듬습니다.
