@@ -15,6 +15,46 @@ const {
 } = require("./src/helpers/userSetup");
 
 const Image = require("@11ty/eleventy-img");
+
+function escapeAttribute(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function renderSticker(sticker) {
+  if (!sticker || typeof sticker !== "string") {
+    return "";
+  }
+  const trimmed = sticker.trim();
+  if (!trimmed) {
+    return "";
+  }
+
+  const [type, icon] = trimmed.split("//");
+  if (type && icon && type.toLowerCase() === "lucide") {
+    const safeIcon = escapeAttribute(icon.trim());
+    if (!safeIcon) {
+      return "";
+    }
+    return `<span class="dg-sticker dg-sticker--lucide" aria-hidden="true"><i data-lucide="${safeIcon}"></i></span>`;
+  }
+
+  const imageCandidate =
+    type && icon && type.toLowerCase() === "image" ? icon.trim() : trimmed;
+  const isLikelyUrl =
+    imageCandidate.startsWith("/") ||
+    imageCandidate.startsWith("http") ||
+    /\.(svg|png|jpe?g|webp|gif)$/i.test(imageCandidate);
+  if (imageCandidate && isLikelyUrl) {
+    const safeUrl = escapeAttribute(imageCandidate);
+    return `<span class="dg-sticker dg-sticker--image" aria-hidden="true"><img src="${safeUrl}" alt="" loading="lazy" decoding="async"></span>`;
+  }
+
+  return "";
+}
 function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
   let options = {
     widths: widths,
@@ -272,6 +312,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("isoDate", function (date) {
     return date && date.toISOString();
+  });
+
+  eleventyConfig.addFilter("stickerIcon", function (sticker) {
+    return renderSticker(sticker);
   });
 
   eleventyConfig.addFilter("link", function (str) {

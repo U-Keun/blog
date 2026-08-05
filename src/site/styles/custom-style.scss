@@ -3,6 +3,24 @@ body {
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
+    --font-text-override: "Chalkboard";
+    --font-default: "Chalkboard", ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    --dg-filetree-width: 320px;
+    --dg-filetree-min-width: 320px;
+    --mk-color-yellow: #facc15;
+    --mk-color-orange: #fb923c;
+    --mk-color-red: #f87171;
+    --mk-color-pink: #f472b6;
+    --dg-graph-fullscreen-offset: 200px;
+    background-color: var(--background-primary);
+    --bg-fixed: #1E1E2D;
+
+    --background-primary: var(--bg-fixed);
+
+    background-color: var(--bg-fixed) !important;
+    background: var(--bg-fixed) !important;
+
+    min-height: 100vh;
     //  background-color: white;
     //  .content {
     //   font-size: 14px;
@@ -10,4 +28,52 @@ body {
     //  h1 {
     //   color: black;
     //  }
+
+    .dg-sticker {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.4em;
+        flex: 0 0 auto;
+        background-color: var(--dg-sticker-bg, transparent);
+        border-radius: 4px;
+    }
+
+    .dg-sticker--lucide .svg-icon {
+        width: 1.1em;
+        height: 1.1em;
+    }
+
+    .foldername[data-top-folder="Projects"] .dg-sticker--lucide .svg-icon,
+    .foldername[data-top-folder="Areas"] .dg-sticker--lucide .svg-icon,
+    .foldername[data-top-folder="Resources"] .dg-sticker--lucide .svg-icon,
+    .foldername[data-top-folder="Archive"] .dg-sticker--lucide .svg-icon {
+        color: #fff;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+    }
+
+    .dg-sticker--image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+
+    .notelink .filename {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+    }
+
+    .graph-fs,
+    #full-graph {
+        left: 50% !important;
+        transform: translate(-50%, -50%) translateX(var(--dg-graph-fullscreen-offset)) !important;
+    }
+
+    #graph-component {
+        margin-left: auto;
+    }
 }
