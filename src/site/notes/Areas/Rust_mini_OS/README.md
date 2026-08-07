@@ -1,11 +1,11 @@
 ---
-{"sticker":"lucide//clipboard-check","dg-publish":true,"tags":["Docs","OS","Rust"],"permalink":"/areas/rust-mini-os/readme/","dgPassFrontmatter":true}
+{"sticker":"lucide//clipboard-check","dg-publish":true,"tags":["Docs","OS","Rust"],"permalink":"/areas/rust-mini-os/readme/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//clipboard-check","tags":["Docs","OS","Rust"]}}
 ---
 
 프로젝트명 : Rust Mini OS on RISC-V
 GitHub : [https://github.com/U-Keun/rust-mini-os](https://github.com/U-Keun/rust-mini-os)
 
-![os_sketch.png| center |600](/img/user/Archive/attachments/os_sketch.png)
+![os_sketch.png\| center \|600](/img/user/Archive/attachments/os_sketch.png)
 **요약**
 RISC-V 환경에서 동작하는 OS 커널을 Rust(`no_std`)로 직접 구현한 프로젝트입니다.
 
@@ -312,7 +312,7 @@ pub unsafe fn yield_now() {
 # 결과
 
 QEMU 상의 RISC-V 가상 머신에서 OpenSBI를 통해 커널이 부팅된 뒤, 커널 스케줄러가 프로세스 A와 B를 번갈아 100회씩 실행하고, 설정된 조건(총 200회 출력)에 도달하면 SBI `system_reset`을 호출해 정상 종료하는 전체 흐름을 보여주는 화면입니다.
-![os_execution.png| center | 400](/img/user/Archive/attachments/os_execution.png)
+![os_execution.png\| center \| 400](/img/user/Archive/attachments/os_execution.png)
 
 ---
 # 배운 점 및 느낀 점

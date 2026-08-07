@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/areas/rust-mini-os/kernel-ld/","dgPassFrontmatter":true}
+{"tags":["Code","OS"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/areas/rust-mini-os/kernel-ld/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Code","OS"],"sticker":"lucide//code-2"}}
 ---
 
 ```ld

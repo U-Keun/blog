@@ -1,4 +1,4 @@
 ---
-{"dg-publish":true,"sticker":"lucide//bot","permalink":"/areas/claude-cli/claude-cli/","dgPassFrontmatter":true}
+{"dg-publish":true,"sticker":"lucide//bot","permalink":"/areas/claude-cli/claude-cli/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//bot"}}
 ---
 

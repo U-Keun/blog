@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//paperclip","dg-publish":true,"dg-home":true,"pinned":"false","permalink":"/u-keun/","tags":["gardenEntry"],"dgPassFrontmatter":true}
+{"sticker":"lucide//paperclip","dg-publish":true,"dg-home":true,"pinned":"false","permalink":"/u-keun/","tags":["gardenEntry"],"dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//paperclip","pinned":"false"}}
 ---
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&pause=1200&center=true&vCenter=true&width=1000&lines=Hi%2C+I'm+U-Keun!;)](https://github.com/DenverCoder1/readme-typing-svg)

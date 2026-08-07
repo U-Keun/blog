@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//file-search-2","tags":["SecondBrain"],"dg-publish":true,"permalink":"/resources/second-brain/c-o-d-e/","dgPassFrontmatter":true}
+{"sticker":"lucide//file-search-2","tags":["SecondBrain"],"dg-publish":true,"permalink":"/resources/second-brain/c-o-d-e/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//file-search-2","tags":["SecondBrain"]}}
 ---
 
 ### Collect

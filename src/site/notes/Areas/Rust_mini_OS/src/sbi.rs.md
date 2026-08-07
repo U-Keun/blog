@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/areas/rust-mini-os/src/sbi-rs/","dgPassFrontmatter":true}
+{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/areas/rust-mini-os/src/sbi-rs/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2"}}
 ---
 
 SBI 호출 규약은 대략적으로 다음과 같이 정의된다:

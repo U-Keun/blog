@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//file-search-2","dg-publish":true,"tags":["SecondBrain"],"permalink":"/resources/second-brain/progressive-summarization/","dgPassFrontmatter":true}
+{"sticker":"lucide//file-search-2","dg-publish":true,"tags":["SecondBrain"],"permalink":"/resources/second-brain/progressive-summarization/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//file-search-2","tags":["SecondBrain"]}}
 ---
 
 Progressive Summarization(단계적 요약)은 제 2의 뇌에 채울 정보와 지식을 만드는 방법론이다.

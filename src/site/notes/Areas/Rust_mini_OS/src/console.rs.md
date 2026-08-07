@@ -1,5 +1,5 @@
 ---
-{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/areas/rust-mini-os/src/console-rs/","dgPassFrontmatter":true}
+{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2","dg-publish":true,"permalink":"/areas/rust-mini-os/src/console-rs/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Code","OS","Rust"],"sticker":"lucide//code-2"}}
 ---
 
 SBI의 `sbi_putchar`를 감싼 커널용 출력 모듈이다. 간단한 스핀락과 `core::fmt::Write`, 그리고 매크로(`kprint!`, `kprintln!`)가 구현되어 있다.

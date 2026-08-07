@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//file-search-2","dg-publish":true,"tags":["SecondBrain"],"permalink":"/resources/second-brain/p-a-r-a/","dgPassFrontmatter":true}
+{"sticker":"lucide//file-search-2","dg-publish":true,"tags":["SecondBrain"],"permalink":"/resources/second-brain/p-a-r-a/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//file-search-2","tags":["SecondBrain"]}}
 ---
 
 ### Projects
