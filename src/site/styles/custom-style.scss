@@ -1,10 +1,19 @@
+@font-face {
+    font-family: "D2Coding";
+    src: local("D2Coding"),
+        url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 body {
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
    ***/
-    --font-text-override: "Chalkboard";
-    --font-default: "Chalkboard", ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    --font-text-override: "Menlo", "D2Coding";
+    --font-default: "Menlo", "D2Coding", ui-monospace, SFMono-Regular, monospace;
     --dg-filetree-width: 320px;
     --dg-filetree-min-width: 320px;
     --mk-color-yellow: #facc15;
