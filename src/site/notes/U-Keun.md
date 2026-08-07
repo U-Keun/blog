@@ -39,7 +39,7 @@
 ---
 ## Education 📚
 - 성균관 대학교 수학과 졸업 (2010.03 ~ 2016.02)
-- 성균관 대학교 대학원 수학과 석·박사 통합과정 수료 (2016.03 ~ 2023.03)  
+- 성균관 대학교 대학원 수학과 석·박사 통합과정 졸업 (2016.03 ~ 2026.08)  
   - [Proof of Chapoton's Conjecture on Newton Polygons of q-Ehrhart Polynomials](https://www.combinatorics.org/ojs/index.php/eljc/article/view/v25i2p51/pdf)
   - [Negative Moments of Orthgonal Polynomials](https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/negative-moments-of-orthogonal-polynomials/C3823C72FBAA0433573CD652A9B8E669)
   - [Refined canonical stable Grothendieck polynomials and their duals, Part 1](https://www.sciencedirect.com/science/article/abs/pii/S0001870824001853)
