@@ -3068,7 +3068,6 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  overscroll-behavior: none;
 }
 body {
   text-rendering: optimizeLegibility;
@@ -14126,14 +14125,10 @@ body.mod-rtl .bases-table-header-resizer {
 }
 .nav-file-title-content,
 .nav-folder-title-content {
-  display: block;
-  flex: 1 1 auto;
+  display: inline-block;
+  overflow-wrap: anywhere;
   overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: normal;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
+  white-space: var(--nav-item-white-space);
 }
 .nav-file-title-content:not([contenteditable="true"]),
 .nav-folder-title-content:not([contenteditable="true"]) {
@@ -14162,7 +14157,6 @@ body.mod-rtl .bases-table-header-resizer {
   display: flex;
   border-radius: var(--radius-s);
   cursor: var(--cursor);
-  min-width: 0;
   color: var(--nav-item-color);
   font-size: var(--nav-item-size);
   font-weight: var(--nav-item-weight);
@@ -14227,11 +14221,7 @@ body:not(.is-grabbing) .nav-folder-title.is-being-dragged .nav-file-tag,
 }
 .file-tree-item-title {
   flex-grow: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-break: normal;
+  word-break: break-word;
 }
 .file-tree-item-icon {
   --icon-size: var(--icon-s);
@@ -14246,15 +14236,6 @@ body:not(.is-grabbing) .nav-folder-title.is-being-dragged .nav-file-tag,
   align-items: center;
   position: relative;
   width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.file-tree .tree-item-inner-text {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .file-tree .tree-item-flair {
   line-height: 1;

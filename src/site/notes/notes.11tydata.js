@@ -17,22 +17,23 @@ module.exports = {
       }
       return data.permalink || undefined;
     },
+    basesNotes: (data) => {
+      if (!data.collections || !data.collections.note) return [];
+      return data.collections.note.map((item) => ({
+        path: item.filePathStem.replace("/notes/", ""),
+        url: item.url,
+        metadata: item.data,
+        fileSlug: item.fileSlug,
+      }));
+    },
     settings: (data) => {
       const noteSettings = {};
       allSettings.forEach((setting) => {
         let noteSetting = data[setting];
         let globalSetting = process.env[setting];
-        let settingValue = noteSetting;
 
-        if (settingValue === undefined) {
-          if (globalSetting === "true") {
-            settingValue = true;
-          } else if (globalSetting === "false") {
-            settingValue = false;
-          } else if (setting === "dgShowLocalGraph") {
-            settingValue = true;
-          }
-        }
+        let settingValue =
+          noteSetting || (globalSetting === "true" && noteSetting !== false);
         noteSettings[setting] = settingValue;
       });
       return noteSettings;
