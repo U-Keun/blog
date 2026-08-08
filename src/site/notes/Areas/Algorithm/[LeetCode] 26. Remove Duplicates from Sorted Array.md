@@ -1,5 +1,5 @@
 ---
-{"tags":["Rust","Algorithm"],"1-4-7-14":["Day4","Day7"],"sticker":"lucide//book-open-check","사이트":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","노트 링크":"[[Select Note]]","dg-publish":true,"permalink":"/areas/algorithm/leet-code-26-remove-duplicates-from-sorted-array/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Rust","Algorithm"],"1-4-7-14":["Day4","Day7"],"sticker":"lucide//book-open-check","사이트":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","노트 링크":"[[Select Note]]"}}
+{"tags":["Rust","Algorithm"],"1-4-7-14":["Day4","Day7","Day10"],"sticker":"lucide//book-open-check","사이트":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","노트 링크":"[[Select Note]]","dg-publish":true,"permalink":"/areas/algorithm/leet-code-26-remove-duplicates-from-sorted-array/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Rust","Algorithm"],"1-4-7-14":["Day4","Day7","Day10"],"sticker":"lucide//book-open-check","사이트":"https://leetcode.com/problems/remove-duplicates-from-sorted-array/","노트 링크":"[[Select Note]]"}}
 ---
 
 정렬된 정수 배열 `nums`에서 중복된 값을 제거하고, 서로 다른 원소의 개수 `k`를 반환하는 문제이다. 여기서 매개변수로 주어지는 `Vec`의 길이를 줄이거나 중복 원소를 삭제할 필요는 없다. 반환값이 `k`라면 채점기는 `nums[0..k]`만 확인한다.
