@@ -95,6 +95,9 @@ function getPermalinkMeta(note, key) {
   let parts = note.filePathStem.split("/");
   let name = parts[parts.length - 1];
   let noteIcon = process.env.NOTE_ICON_DEFAULT;
+  let sticker = null;
+  let folderSticker = false;
+  let color = null;
   let hide = false;
   let pinned = false;
   let folders = null;
@@ -110,6 +113,15 @@ function getPermalinkMeta(note, key) {
     }
     if (note.data.noteIcon) {
       noteIcon = note.data.noteIcon;
+    }
+    if (note.data.sticker) {
+      sticker = note.data.sticker;
+    }
+    if (note.data.folderSticker) {
+      folderSticker = note.data.folderSticker;
+    }
+    if (note.data.color) {
+      color = note.data.color;
     }
     // Reason for adding the hide flag instead of removing completely from file tree is to
     // allow users to use the filetree data elsewhere without the fear of losing any data.
@@ -142,7 +154,10 @@ function getPermalinkMeta(note, key) {
     //ignore
   }
 
-  return [{ permalink, name, noteIcon, hide, pinned }, folders];
+  return [
+    { permalink, name, noteIcon, sticker, folderSticker, color, hide, pinned },
+    folders,
+  ];
 }
 
 function assignNested(obj, keyPath, value) {
@@ -157,11 +172,59 @@ function assignNested(obj, keyPath, value) {
   obj[keyPath[lastKeyIndex]] = value;
 }
 
+function assignFolderMeta(obj, keyPath, value) {
+  let current = obj;
+  for (const key of keyPath) {
+    if (!(key in current)) {
+      current[key] = { isFolder: true };
+    }
+    current = current[key];
+  }
+  Object.assign(current, value, { isFolder: true });
+}
+
 function getFileTree(data) {
   const tree = {};
-  (data.collections.note || []).forEach((note) => {
+  const notes = data.collections.note || [];
+  const folderPaths = new Set();
+
+  notes.forEach((note) => {
+    const [, folders] = getPermalinkMeta(note);
+    if (!folders) return;
+    const currentPath = [];
+    folders.slice(0, -1).forEach((segment) => {
+      currentPath.push(segment);
+      folderPaths.add(currentPath.join("/"));
+    });
+  });
+
+  notes.forEach((note) => {
     const [meta, folders] = getPermalinkMeta(note);
+    if (!folders) return;
+
+    const noteFileName = folders[folders.length - 1].replace(/\.md$/, "");
+    const parentFolderName =
+      folders.length > 1 ? folders[folders.length - 2] : null;
+    let folderMetaPath = null;
+
+    if (parentFolderName && noteFileName === parentFolderName) {
+      folderMetaPath = folders.slice(0, -1);
+    } else if (folders.length === 1 && folderPaths.has(noteFileName)) {
+      folderMetaPath = [noteFileName];
+    }
+
+    if (folderMetaPath && note.data.hide === undefined) {
+      meta.hide = true;
+    }
+
     assignNested(tree, folders, { isNote: true, ...meta });
+
+    if (folderMetaPath && (meta.sticker || meta.color)) {
+      assignFolderMeta(tree, folderMetaPath, {
+        ...(meta.sticker ? { sticker: meta.sticker } : {}),
+        ...(meta.color ? { color: meta.color } : {}),
+      });
+    }
   });
   const navigationOrder = data.navigationOrder || null;
   const fileTree = sortTree(tree, navigationOrder, "/");
