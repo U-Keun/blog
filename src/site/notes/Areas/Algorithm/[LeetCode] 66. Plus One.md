@@ -1,5 +1,5 @@
 ---
-{"sticker":"lucide//book-open-check","tags":["Rust","Algorithm"],"1-4-7-14":["Day8"],"사이트":"https://leetcode.com/problems/plus-one/description/","노트 링크":"[[Select Note]]","dg-publish":true,"permalink":"/areas/algorithm/leet-code-66-plus-one/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//book-open-check","tags":["Rust","Algorithm"],"1-4-7-14":["Day8"],"사이트":"https://leetcode.com/problems/plus-one/description/","노트 링크":"[[Select Note]]"}}
+{"sticker":"lucide//book-open-check","tags":["Rust","Algorithm"],"1-4-7-14":["Day8","Day11"],"사이트":"https://leetcode.com/problems/plus-one/description/","노트 링크":"[[Select Note]]","dg-publish":true,"permalink":"/areas/algorithm/leet-code-66-plus-one/","dgPassFrontmatter":true,"dg-note-properties":{"sticker":"lucide//book-open-check","tags":["Rust","Algorithm"],"1-4-7-14":["Day8","Day11"],"사이트":"https://leetcode.com/problems/plus-one/description/","노트 링크":"[[Select Note]]"}}
 ---
 
 처음에는 뒤에서부터 숫자를 확인하면서 올림을 계산하고, 결과를 새로운 벡터의 앞쪽에 삽입하는 방식으로 구현했다.

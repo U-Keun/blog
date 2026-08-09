@@ -1,5 +1,5 @@
 ---
-{"tags":["Rust","Algorithm"],"1-4-7-14":["Day10"],"사이트":"https://leetcode.com/problems/sqrtx/submissions/2098036107/","노트 링크":"[[Select Note]]","dg-publish":true,"permalink":"/areas/algorithm/leet-code-69-sqrt-x/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Rust","Algorithm"],"1-4-7-14":["Day10"],"사이트":"https://leetcode.com/problems/sqrtx/submissions/2098036107/","노트 링크":"[[Select Note]]"}}
+{"tags":["Rust","Algorithm"],"1-4-7-14":["Day10"],"사이트":"https://leetcode.com/problems/sqrtx/submissions/2098036107/","노트 링크":"[[Select Note]]","dg-publish":true,"sticker":"lucide//book-open-check","permalink":"/areas/algorithm/leet-code-69-sqrt-x/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Rust","Algorithm"],"1-4-7-14":["Day10"],"사이트":"https://leetcode.com/problems/sqrtx/submissions/2098036107/","노트 링크":"[[Select Note]]","sticker":"lucide//book-open-check"}}
 ---
 
 ##### 최종 코드
