@@ -1,5 +1,5 @@
 ---
-{"tags":["Rust","Algorithm"],"1-4-7-14":["Day11"],"사이트":"https://leetcode.com/problems/climbing-stairs/description/","노트 링크":"[[Select Note]]","dg-publish":true,"permalink":"/areas/algorithm/leet-code-70-climbing-stairs/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Rust","Algorithm"],"1-4-7-14":["Day11"],"사이트":"https://leetcode.com/problems/climbing-stairs/description/","노트 링크":"[[Select Note]]"}}
+{"tags":["Rust","Algorithm"],"1-4-7-14":["Day11"],"사이트":"https://leetcode.com/problems/climbing-stairs/description/","노트 링크":"[[Select Note]]","dg-publish":true,"sticker":"lucide//book-open-check","permalink":"/areas/algorithm/leet-code-70-climbing-stairs/","dgPassFrontmatter":true,"dg-note-properties":{"tags":["Rust","Algorithm"],"1-4-7-14":["Day11"],"사이트":"https://leetcode.com/problems/climbing-stairs/description/","노트 링크":"[[Select Note]]","sticker":"lucide//book-open-check"}}
 ---
 
 ###### 처음 풀이
